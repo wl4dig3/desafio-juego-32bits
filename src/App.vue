@@ -24,11 +24,17 @@
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: white;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #93e734;
     }
   }
+}
+#app{
+  background-image: url(assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40rem;
 }
 </style>

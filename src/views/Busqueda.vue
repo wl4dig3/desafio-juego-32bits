@@ -1,9 +1,9 @@
 <template>
-<div>
+<div class="busqueda text-light">
   <h1>Búsqueda de producto Disponible</h1>
-  <input type="text" v-model="producto" />
-  <ul v-if="check">
-    <li v-for="(producto, clave) in productoDisponiblePorId" :key="clave">
+  <input  type="text" v-model="producto" />
+  <ul  v-if="check">
+    <li  v-for="(producto, clave) in productoDisponiblePorId" :key="clave">
       <label>nombre: {{producto.nombre}} | stock: {{producto.stock}} | precio: ${{producto.precio}}</label>
     </li>
   </ul>
@@ -29,4 +29,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+ 
+</style>

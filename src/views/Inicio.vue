@@ -1,5 +1,6 @@
 <template>
 <div class="home container px-5">
+  <h1 class="text-light m-2">32 Bits</h1>
   <label for>Id</label>
   <select class="form-control">
     <option v-for="(juguete,i) in juguetes" :key="i" :value="juguete.nombre">{{juguete.nombre}}</option>
@@ -46,3 +47,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .home {
+    width: 30rem;
+  }
+  label {
+    color: yellow;
+  }
+</style>

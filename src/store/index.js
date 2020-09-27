@@ -8,10 +8,10 @@ export default new Vuex.Store({
   state: {
     juguetes: [
       { id: uuidv4().slice(30), nombre: 'Hulk', stock: 50, precio: 4500, color: 'green', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Spiderman', stock: 150, precio: 14500, color: 'red', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Batman', stock: 250, precio: 5500, color: 'black', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Superman', stock: 100, precio: 6500, color: 'gray', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Wonderwoman', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() }, { id: uuidv4().slice(30), nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() },
+      { id: uuidv4().slice(30), nombre: 'Thor', stock: 150, precio: 14500, color: 'red', fecha: new Date() },
+      { id: uuidv4().slice(30), nombre: 'Capitan-America', stock: 250, precio: 5500, color: 'black', fecha: new Date() },
+      { id: uuidv4().slice(30), nombre: 'Spiderman', stock: 100, precio: 6500, color: 'gray', fecha: new Date() },
+      { id: uuidv4().slice(30), nombre: 'Black-Panther', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() }, { id: uuidv4().slice(30), nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() },
     ],
     historialdeVentas: [],
   },

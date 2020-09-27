@@ -1,5 +1,17 @@
 <template>
-  <div class="ventas">
-    <h1>This is an about page</h1>
-  </div>
+<div class="ventas text-light">
+  <h1>Ventas</h1>
+<b-table striped hover :items="historialDeVentas"></b-table>
+</div>
 </template>
+
+<script>
+import {
+  mapState
+} from "vuex";
+export default {
+  computed: {
+    ...mapState(["historialDeVentas"]),
+  },
+};
+</script>
