@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { v4 as uuidv4 } from 'uuid'
+
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     juguetes: [
-      { id: uuidv4().slice(30), nombre: 'Hulk', stock: 50, precio: 4500, color: 'green', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Thor', stock: 150, precio: 14500, color: 'red', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Capitan-America', stock: 250, precio: 5500, color: 'black', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Spiderman', stock: 100, precio: 6500, color: 'gray', fecha: new Date() },
-      { id: uuidv4().slice(30), nombre: 'Black-Panther', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() }, { id: uuidv4().slice(30), nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() },
+      { id: '001', nombre: 'Hulk', stock: 50, precio: 4500, color: 'green', fecha: new Date() },
+      { id: '002', nombre: 'Thor', stock: 150, precio: 14500, color: 'red', fecha: new Date() },
+      { id: '003', nombre: 'Capitan-America', stock: 250, precio: 5500, color: 'black', fecha: new Date() },
+      { id: '004', nombre: 'Spiderman', stock: 100, precio: 6500, color: 'gray', fecha: new Date() },
+      { id: '005', nombre: 'Black-Panther', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() }, { id: '006', nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() }
     ],
     historialdeVentas: [],
   },
@@ -26,33 +26,22 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    DESCONTAR(state, newJuguetes) {
-      state.juguetes = newJuguetes
+    DESCONTAR(state, payload) {
+      state.juguetes = state.juguetes.map((e) => {
+        if (e.nombre == payload.trim()) {
+          e.stock--;
+          state.historialdeVentas.push(e);
+        }
+        return e;
+      });
     },
-    REGISTRO(state, newHistorial) {
-      state.historialDeVentas = newHistorial
-    },
+    // REGISTRO(state, newHistorial) {
+    //   state.historialDeVentas = newHistorial
+    // },
   },
   actions: {
-    descontar({ commit, state, dispatch }, payload) {
-      let registro
-      let newJuguetes = state.juguetes.map((e) => {
-        if (e.id == payload.trim()) {
-          e.stock--
-          registro = e
-        }
-        return e
-      })
-      commit('DESCONTAR', newJuguetes)
-      console.log(registro)
-      dispatch('registro', registro)
-    },
-    registro({ commit, state }, registro) {
-      registro.fecha = new Date()
-      let historial = state.historialDeVentas
-      historial.push(registro)
-      let newHistorial = historial
-      commit('REGISTRO', newHistorial)
+    descontar({ commit }, payload) {
+      commit('DESCONTAR', payload)
     },
   },
 

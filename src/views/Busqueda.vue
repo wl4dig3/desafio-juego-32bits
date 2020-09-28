@@ -30,5 +30,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- 
+ label {
+   color: black;
+   font-weight: 700;
+   margin-top: .6rem;
+ }
 </style>
