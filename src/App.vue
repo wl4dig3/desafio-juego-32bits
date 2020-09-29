@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{name:'Inicio'}">Inicio</router-link> |
-      <router-link :to="{name:'Ventas'}">Ventas</router-link> |
-      <router-link :to="{name:'Busqueda'}">Busqueda</router-link> |
-      <router-link :to="{name:'Inventario'}">Inventario</router-link> 
+      <router-link :to="{ name: 'Inicio' }">Inicio</router-link> |
+      <router-link :to="{ name: 'Ventas' }">Ventas</router-link> |
+      <router-link :to="{ name: 'Busqueda' }">Busqueda</router-link> |
+      <router-link :to="{ name: 'Inventario' }">Inventario</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -31,7 +31,7 @@
     }
   }
 }
-#app{
+#app {
   background-image: url(assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;

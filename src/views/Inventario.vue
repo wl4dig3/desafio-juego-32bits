@@ -1,7 +1,7 @@
 <template>
   <div class="inventario text-light">
     <h1 class="text-light mb-3">Inventario</h1>
-{{id}}
+    {{ id }}
     <b-table striped hover :items="juguetes"></b-table>
   </div>
 </template>
@@ -13,25 +13,23 @@ export default {
   data() {
     return {
       // fields: ["id", "nombre", "stock", "precio"],
-      id:''
+      id: "",
     };
   },
   computed: {
     ...mapState(["juguetes"]),
   },
 
-  // mounted() {
-  //   this.id = this.id;
-  // },
+  mounted() {
+    this.id = this.id;
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.table {
-  color: rgb(248, 245, 241);
-  font-weight: 700;
+.table:hover {
+  color: rgb(216, 130, 25);
+  font-weight: 800;
 }
-.invetario {
-  background-color: violet;
-}
+
 </style>

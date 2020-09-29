@@ -1,13 +1,16 @@
 <template>
-<div class="busqueda text-light">
-  <h1>Búsqueda de producto Disponible</h1>
-  <input  type="text" v-model="producto" />
-  <ul  v-if="check">
-    <li  v-for="(producto, clave) in productoDisponiblePorId" :key="clave">
-      <label>nombre: {{producto.nombre}} | stock: {{producto.stock}} | precio: ${{producto.precio}}</label>
-    </li>
-  </ul>
-</div>
+  <div class="busqueda text-light">
+    <h1>Búsqueda de producto Disponible</h1>
+    <input type="text" v-model="producto" />
+    <ul v-if="check">
+      <li v-for="(producto, clave) in productoDisponiblePorId" :key="clave">
+        <label
+          >nombre: {{ producto.nombre }} | stock: {{ producto.stock }} | precio:
+          ${{ producto.precio }}</label
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -30,9 +33,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- label {
-   color: black;
-   font-weight: 700;
-   margin-top: .6rem;
- }
+label {
+  color: black;
+  font-weight: 700;
+  margin-top: 0.6rem;
+}
 </style>

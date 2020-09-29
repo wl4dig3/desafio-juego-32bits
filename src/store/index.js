@@ -11,7 +11,8 @@ export default new Vuex.Store({
       { id: '002', nombre: 'Thor', stock: 150, precio: 14500, color: 'red', fecha: new Date() },
       { id: '003', nombre: 'Capitan-America', stock: 250, precio: 5500, color: 'black', fecha: new Date() },
       { id: '004', nombre: 'Spiderman', stock: 100, precio: 6500, color: 'gray', fecha: new Date() },
-      { id: '005', nombre: 'Black-Panther', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() }, { id: '006', nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() }
+      { id: '005', nombre: 'Black-Panther', stock: 230, precio: 5500, color: 'lightred', fecha: new Date() },
+      { id: '006', nombre: 'Ironman', stock: 120, precio: 7500, color: 'lightblue', fecha: new Date() }
     ],
     historialdeVentas: [],
   },
@@ -27,9 +28,10 @@ export default new Vuex.Store({
   },
   mutations: {
     DESCONTAR(state, payload) {
-      state.juguetes = state.juguetes.map((e) => {
+      console.log(payload);
+      let newJuguete = state.juguetes.map((e) => {
         if (e.nombre == payload.trim()) {
-          e.stock--;
+          e.stock--
           state.historialdeVentas.push(e);
         }
         return e;
